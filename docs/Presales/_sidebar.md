@@ -1,0 +1,12 @@
+[About Lifetime Promo](Presales/lifetimepromo.md)
+[Do you allow marketing emails](Presales/marketing.md)
+[Do you have your own network?](Presales/ownnetwork.md)
+[Do you support split delivery?](Presales/splitdelivery.md)
+[How do storage limits work?](Presales/storagelimits.md)
+[Do you offer refunds?](Presales/Refunds.md)
+[Do you block any emails?](Presales/whyblockemails.md)
+[IP Reputation](Presales/ipreputation.md)
+[Can I use a warmup service?](Presales/warmup.md)
+[Do you block any emails?](Presales/whyblockemails.md)
+
+[Back]()
