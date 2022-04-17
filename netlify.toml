@@ -3,3 +3,10 @@
   to = "https://mxroutedocs.com/features/ipreputation/"
   status = 301
   force = true
+
+# /docs/* https://mxroutedocs.com 301!
+[[redirects]]
+  from = "/docs/*"
+  to = "https://mxroutedocs.com"
+  status = 301
+  force = true
