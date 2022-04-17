@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/docs/#/Presales/ipreputation"
+  from = "/docs/\#/Presales/ipreputation"
   to = "https://mxroutedocs.com/features/ipreputation/"
   status = 301
   force = true
