@@ -23,6 +23,144 @@
     #ico-x { width: 32px; height: 32px; margin-right: 15px; display: inline-block; vertical-align: top; fill: rgba(255,255,255,0.15); transition: all 0.1s ease-out; }
     @media (min-width:788px) { #ico-x { width: 22px; height: 22px; margin-right: 10px; } }
     a:hover #ico-x { fill: #1da1f2; }
+    
+    /* Enhanced Policy Page Styling */
+    .policy-content {
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-size: 16px;
+    }
+    
+    .policy-content h1 {
+        color: #1c4185;
+        border-bottom: 4px solid #cc2683;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .policy-content h2 {
+        color: #333;
+        font-size: 1.5em;
+        font-weight: 500;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 12px 0;
+        border-left: 5px solid #cc2683;
+        padding-left: 20px;
+        background: linear-gradient(90deg, rgba(204, 38, 131, 0.05), transparent);
+    }
+    
+    .policy-content p {
+        margin-bottom: 18px;
+        text-align: justify;
+        color: #444;
+    }
+    
+    .policy-content p strong {
+        color: #1c4185;
+        font-weight: 600;
+    }
+    
+    .revision-date {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #6c757d;
+    }
+    
+    .revision-date strong {
+        color: #1c4185 !important;
+    }
+    
+    .forbidden-list {
+        background: #fff5f5;
+        border-left: 4px solid #dc3545;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .forbidden-list ul {
+        margin: 15px 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    .forbidden-list li {
+        position: relative;
+        padding: 8px 0 8px 25px;
+        margin-bottom: 5px;
+        line-height: 1.6;
+    }
+    
+    .forbidden-list li:before {
+        content: "⚠️";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        color: #dc3545;
+        font-weight: bold;
+    }
+    
+    .policy-disclaimer {
+        background: linear-gradient(135deg, #1c4185, #cc2683);
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin-top: 40px;
+        box-shadow: 0 4px 15px rgba(28, 65, 133, 0.2);
+    }
+    
+    .policy-disclaimer strong {
+        color: #fff !important;
+    }
+    
+    .section-divider {
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #cc2683, transparent);
+        margin: 30px 0;
+        border: none;
+    }
+    
+    .policy-content a {
+        color: #cc2683;
+        text-decoration: none;
+        border-bottom: 1px dotted #cc2683;
+        transition: all 0.2s ease;
+    }
+    
+    .policy-content a:hover {
+        color: #1c4185;
+        border-bottom: 1px solid #1c4185;
+        text-decoration: none;
+    }
+    
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+        .policy-content {
+            padding: 0 15px;
+        }
+        
+        .policy-content h1 {
+            font-size: 2em;
+        }
+        
+        .policy-content h2 {
+            font-size: 1.3em;
+            padding-left: 15px;
+        }
+        
+        .policy-content p {
+            text-align: left;
+        }
+    }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -111,8 +249,11 @@
       <main id="main-content" role="main">
       <section class="default">
         <div class="container">
+          <div class="policy-content">
             <h1>TERMS OF SERVICE</h1>
-            <p><strong>Revision date: Feb 20, 2025</strong></p>
+            <div class="revision-date">
+              <p><strong>Revision date: Feb 20, 2025</strong></p>
+            </div>
 		<p>MXroute LLC is a Limited Liability Corporation in the state of Texas. All services provided by MXroute may be used for lawful purposes only. Transmission, storage or presentation of any information, data or material in violation of any United States federal, state or city law is prohibited. This includes, but is not limited to: copyrighted material, material we judge to be threatening or obscene, or material protected by trade secret and other statute. The subscriber agrees to indemnify and hold harmless MXroute from any claims resulting from the use of service which damages the subscriber or any other party.</p>
 
             <h2>Functional Service</h2>
@@ -130,26 +271,29 @@
             <h2>Valid DNS Records</h2>
 		<p>You are required to have valid SPF and MX records on domains that send through our service. Failure to do so results in reduced sending reputation for your domain and our IP addresses, which can result in us parting ways to ensure high quality sending for our other customers. The SPF and MX records are given to you in an email sent after you pay for service.</p>
 
+            <hr class="section-divider">
             <h2>Refusal of Service</h2>
 		<p>We reserve the right to refuse, cancel or suspend service, at our sole discretion.</p>
 
             <h2>Forbidden Services</h2>
-		<p>We are unable to provide services to the following customers due to consistently negative experiences with bounce rates and spam reports:
-		<br>
-		- ANY use of the instantly.ai service in connection with ours.<br>
-		– Leak forums. These are forums where users share compromised accounts for internet services.<br>
-		– Adult forums. These are forums where users trade pornography.<br>
-		– Any kind of mass mailing campaign to a list of recipients that did not go through a double opt in process<br>
-		– Hundreds of emails at a time to qq.com. If you send almost exclusively to qq.com, and hundreds of emails at a time, we are unable to provide you with service.<br>
-		– Deceptive use against third party services by creating multiple email accounts to pretend to be multiple users of their service<br>
-		– Forward-only service for massive numbers of domains on one account (maximum impact on our servers, minimal cost and spreading out of domains)<br>
-		– Sending SMS via email<br>
-		– Marketing email<br>
-		– “Warmup” services<br>
-		- Chinese counterfeit ecommerce websites<br>
-		- Anything relating to v2board<br>
-		- Email forwarders configured in such a way that they frequently exceed 400 outbound emails per hour<br>
-		</p>
+            <div class="forbidden-list">
+		<p>We are unable to provide services to the following customers due to consistently negative experiences with bounce rates and spam reports:</p>
+		<ul>
+		    <li>ANY use of the instantly.ai service in connection with ours.</li>
+		    <li>Leak forums. These are forums where users share compromised accounts for internet services.</li>
+		    <li>Adult forums. These are forums where users trade pornography.</li>
+		    <li>Any kind of mass mailing campaign to a list of recipients that did not go through a double opt in process</li>
+		    <li>Hundreds of emails at a time to qq.com. If you send almost exclusively to qq.com, and hundreds of emails at a time, we are unable to provide you with service.</li>
+		    <li>Deceptive use against third party services by creating multiple email accounts to pretend to be multiple users of their service</li>
+		    <li>Forward-only service for massive numbers of domains on one account (maximum impact on our servers, minimal cost and spreading out of domains)</li>
+		    <li>Sending SMS via email</li>
+		    <li>Marketing email</li>
+		    <li>"Warmup" services</li>
+		    <li>Chinese counterfeit ecommerce websites</li>
+		    <li>Anything relating to v2board</li>
+		    <li>Email forwarders configured in such a way that they frequently exceed 400 outbound emails per hour</li>
+		</ul>
+            </div>
 
             <h2>Intended for human consumption</h2>
 		<p>Emails sent to other mail services should be intended for human consumption. Please do not flood an excess of automated emails to other mail providers that can easily be described as "No one could possibly be reading all of these on the other side of this transaction." We will take measures to block this excess of junk to protect the reputation of our IP addresses and your domain, because email which isn't intended to be read is by definition email that belongs in the spam folder at the other provider.</p>
@@ -169,6 +313,7 @@
             <h2>Damaging IP Reputation</h2>
 		<p>If your email behavior consistently harms the reputation of our IP addresses and causes delayed or failed deliveries for other customers, we reserve the right to cancel your service. This includes repeat failures to secure your accounts by using strong passwords, as password security is your responsibility.</p>
 
+            <hr class="section-divider">
             <h2>Backups</h2>
 		<p>Accounts are backed up frequently in case of hardware failure. Backups are not guaranteed and are provided as a courtesy.</p>
 
@@ -211,6 +356,7 @@
 		<p>With exception of FraudRecord.com in the case of billing chargebacks and intentional spam, we do not share your information with any third party. We do monitor email logs and login activity so that we might be proactive in response to any issues whether technical or security. We do not read your email unless instructed by you to do so. We do review logs that include sender, recipient, and subject when you make a support request.</p>
 
             <p class="policy-disclaimer"><strong>MXroute reserves the right to amend any or all of the above policies, guidelines and disclaimer without notification. We also retain the right to increase any pricing and make changes to our account plans without notification.</strong></p>
+          </div>
 
         </div>
     </section>
