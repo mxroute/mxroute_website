@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MXroute - Email Hosting</title>
+    <title>MXroute - Reseller Service Information</title>
     <!-- Bootstrap -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300|Open+Sans+Condensed:300" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
@@ -18,11 +18,179 @@
     <link rel="shortcut icon" href="images/favicons/favicon.ico">
     <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
     <style>
-#ico-x { width: 32px; height: 32px; margin-right: 15px; display: inline-block; vertical-align: top; fill: rgba(255,255,255,0.15); transition: all 0.1s ease-out; }
-@media (min-width:788px) { #ico-x { width: 22px; height: 22px; margin-right: 10px; } }
-a:hover #ico-x { fill: #1da1f2; }
-</style>
+    #ico-x { width: 32px; height: 32px; margin-right: 15px; display: inline-block; vertical-align: top; fill: rgba(255,255,255,0.15); transition: all 0.1s ease-out; }
+    @media (min-width:788px) { #ico-x { width: 22px; height: 22px; margin-right: 10px; } }
+    a:hover #ico-x { fill: #1da1f2; }
+    
+    /* Enhanced Reseller Info Page Styling */
+    .reseller-content {
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-size: 16px;
+    }
+    
+    .reseller-content h1 {
+        color: #1c4185;
+        border-bottom: 4px solid #cc2683;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .reseller-content h2 {
+        color: #333;
+        font-size: 1.5em;
+        font-weight: 500;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 12px 0;
+        border-left: 5px solid #cc2683;
+        padding-left: 20px;
+        background: linear-gradient(90deg, rgba(204, 38, 131, 0.05), transparent);
+    }
+    
+    .reseller-content h3 {
+        color: #1c4185;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .reseller-content p {
+        margin-bottom: 18px;
+        text-align: justify;
+        color: #444;
+    }
+    
+    .comparison-section {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 30px 0;
+    }
+    
+    .service-list {
+        background: #fff;
+        border-left: 4px solid #28a745;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .service-list.standard {
+        border-left-color: #17a2b8;
+    }
+    
+    .service-list.reseller {
+        border-left-color: #cc2683;
+    }
+    
+    .service-list ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+    
+    .service-list li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+    
+    .highlight-box {
+        background: #f8f9fa;
+        border: 2px solid #1c4185;
+        color: #333;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px 0;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(28, 65, 133, 0.1);
+    }
+    
+    .highlight-box h3 {
+        color: #1c4185 !important;
+        margin-bottom: 15px;
+    }
+    
+    .highlight-box a {
+        color: #cc2683;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+    
+    .highlight-box a:hover {
+        color: #1c4185;
+        text-decoration: none;
+    }
+    
+    .warning-box {
+        background: #fff3cd;
+        border: 2px solid #ffc107;
+        color: #856404;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px 0;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+    }
+    
+    .warning-box h3 {
+        color: #dc3545 !important;
+        margin-bottom: 15px;
+    }
+    
+    .warning-box strong {
+        color: #721c24;
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #cc2683;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .back-link:hover {
+        color: #1c4185;
+        text-decoration: none;
+    }
+    
+    .back-link:before {
+        content: "← ";
+        margin-right: 5px;
+    }
+    
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+        .reseller-content {
+            padding: 0 15px;
+        }
+        
+        .reseller-content h1 {
+            font-size: 2em;
+        }
+        
+        .reseller-content h2 {
+            font-size: 1.3em;
+            padding-left: 15px;
+        }
+        
+        .reseller-content p {
+            text-align: left;
+        }
+        
+        .comparison-section {
+            padding: 20px 15px;
+        }
+    }
+    </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +205,7 @@ a:hover #ico-x { fill: #1da1f2; }
   </head>
   <body>
     <!-- Skip Navigation Link -->
-    <a href="#main-content" class="sr-only sr-only-focusable" aria-label="Skip to main content">Skip to main content</a>
+    <a href="#main-content" class="sr-only sr-only-focusable" style="position: absolute; top: 0; left: 0; z-index: 9999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none;">Skip to main content</a>
       <header role="banner">
       <!-- Static navbar -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Main navigation">
@@ -49,7 +217,7 @@ a:hover #ico-x { fill: #1da1f2; }
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./" aria-label="MXroute home page">
+            <a class="navbar-brand" href="./" aria-label="MXroute - Return to homepage">
               <svg version="1.1" id="top-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  height="100%" viewBox="37.351 28.421 601.043 105.379"
                  enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
@@ -70,7 +238,7 @@ a:hover #ico-x { fill: #1da1f2; }
                       V53.313h16.694v15.948c2.683-4.967,6.334-9.041,10.955-12.222c4.621-3.179,9.514-4.819,14.682-4.919l0.149,16.843
                       C323.147,68.963,322.849,68.963,322.55,68.963z"/>
                     <path fill="#929292" d="M398.295,121.949c-7.951,7.898-17.886,11.85-29.81,11.85c-11.925,0-21.861-3.949-29.811-11.85
-                      c-7.951-7.899-11.924-17.563-11.924-28.989c0-11.426,3.973-21.091,11.924-28.99c7.949-7.9,17.886-11.85,29.811-11.85
+                      c-7.951-7.899-11.924-17.563-11.924-28.989c0-11.426,3.973-21.091,11.924-28.990c7.949-7.9,17.886-11.85,29.811-11.85
                       c11.924,0,21.857,3.95,29.81,11.85c7.948,7.899,11.924,17.564,11.924,28.99C410.219,104.389,406.244,114.05,398.295,121.949z
                        M350.525,111.665c4.719,4.821,10.706,7.229,17.961,7.229c7.252,0,13.238-2.408,17.96-7.229c4.719-4.817,7.08-11.054,7.08-18.705
                       c0-7.649-2.361-13.885-7.08-18.706c-4.722-4.818-10.708-7.229-17.96-7.229c-7.255,0-13.242,2.411-17.961,7.229
@@ -96,114 +264,118 @@ a:hover #ico-x { fill: #1da1f2; }
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://mxroutedocs.com/" aria-label="View MXroute documentation"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
-                <li><a href="https://blog.mxroute.com" aria-label="Read MXroute blog posts"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
-                <li><a href="https://headwayapp.co/mxroute-changelog" aria-label="View product changelog"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
-                <li><a href="https://status.mxroute.com" aria-label="Check service status"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
-                <li><a href="reseller.html" aria-label="Learn about reseller services"><span class="glyphicon glyphicon-piggy-bank navbar-mobile-icon" aria-hidden="true"></span>Reseller</a></li>
-                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button" aria-label="Login to your account"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
+                <li><a href="https://mxroutedocs.com/" aria-label="Documentation (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
+                <li><a href="https://blog.mxroute.com" aria-label="Blog (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
+                <li><a href="https://headwayapp.co/mxroute-changelog" aria-label="Changelog (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
+                <li><a href="https://status.mxroute.com" aria-label="Status page (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
+                <li><a href="reseller.html"><span class="glyphicon glyphicon-piggy-bank navbar-mobile-icon" aria-hidden="true"></span>Reseller</a></li>
+                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button" aria-label="Login to client area (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
     </header>
-      <main role="main" id="main-content">
-      <section id="cover">
-      <div id="inner-cover">
-          <svg version="1.1" id="MXRouteIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-15.438 -14.883 440 300" enable-background="new -15.438 -14.883 440 300" xml:space="preserve" width="100%" height="100%" class="cover-icon" role="img" aria-label="MXroute email hosting icon">
-            <linearGradient id="Background_1_" gradientUnits="userSpaceOnUse" x1="76.2876" y1="860.7878" x2="242.94" y2="720.9498" gradientTransform="matrix(1 0 0 1 0 -520.7656)">
-                <stop  offset="0%" class="icon-gradient-light"/>
-                <stop  offset="90%" class="icon-gradient-dark"/>
-            </linearGradient>
-            <linearGradient id="Foreground_1_" gradientUnits="userSpaceOnUse" x1="27.0317" y1="804.8611" x2="382.9335" y2="506.2241" gradientTransform="matrix(1 0 0 1 0 -520.7656)">
-                <stop  offset="0%" class="icon-gradient-light"/>
-                <stop  offset="90%" class="icon-gradient-dark"/>
-            </linearGradient>
-            <polygon id="Background" fill="url(#Background_1_)" points="17.63,270.117 159.622,150.925 301.621,270.117 "/>
-            <path id="Foreground" fill="url(#Foreground_1_)" d="M408.947,17.102v235.787L268.024,134.64L408.913,16.42
-              C408.922,16.648,408.947,16.872,408.947,17.102z M18.528,0.117l185.477,155.636L389.48,0.117H18.528z M0.178,17.327v234.765
-              l139.89-117.383L0.178,17.327z M390.627,270.117L248.629,150.925L106.636,270.117H390.627z"/>
-          </svg>
-
-          <h1>You asked, we answered</h1>
-          <h4>You can now control how your clients interact with our service</h4>
-          <a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services" class="btn btn-lg btn-primary promo-button" aria-label="Read important information about reseller services before purchasing">Read before you buy</a>
-      </div>
-    </section>
-      <section id="features">
+      <main id="main-content" role="main">
+      <section class="default">
         <div class="container">
-            <div id="features-row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 feature-box">
-                    <h3>Your Theme</h3>
-			<p>You gain the ability to adjust the control panel theme, logo, colors, and links to your client's needs.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 feature-box">
-                    <h3>Branded Webmail</h3>
-			<p>Crossbox allows you to fully brand one of our webmail clients with your own login screen, logo, and URL.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 feature-box">
-                    <h3>Highly Managed</h3>
-			<p>We are constantly monitoring for threats, keeping an eye out for your customers and their security.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 feature-box">
-                    <h3>IP Reputation</h3>
-			<p>We’ve mostly taken IP reputation off of the table by using a high reputation pool of IP addresses. If an e-mail fails delivery due to IP reputation, we send again, and again, until we get it right. It’s not your problem and we know that.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 feature-box">
-                    <h3>Security</h3>
-			<p>Let's face it, we know we're not Lavabit. Your data is still kept secure by frequent audits, excessive security automation, and physical monitoring of the servers in a local datacenter.</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 feature-box">
-                    <h3>Spam Filtering</h3>
-			<p>We create our own custom Rspamd rules based on continual log audits, and we run an internal RBL to fend off the worst spam networks.</p>
-                </div></div>
+          <div class="reseller-content">
+            <a href="reseller.html" class="back-link">Back to Reseller Services</a>
+            
+            <h1>What is Reseller Service?</h1>
+            <p>Understanding how MXroute's reseller service differs from our standard email hosting plans.</p>
+            
+            <div class="warning-box">
+              <h3>⚠️ Important Notice</h3>
+              <p><strong>Reseller is not as polished as our normal service, because we give you tutorials to turn it into your own service in the way that we've done with ours. It's a blank template, and if you want to just jump right in without setting it up for your business, you might be disappointed.</strong></p>
+            </div>
+
+            <div class="comparison-section">
+              <h2>Service Comparison</h2>
+              
+              <div class="service-list standard">
+                <h3>Standard MXroute Service</h3>
+                <p>When you purchase normal MXroute service, you receive:</p>
+                <ul>
+                  <li>One control panel login to a server</li>
+                  <li>Ability to add domains and email accounts</li>
+                  <li>Limited capabilities such as:
+                    <ul>
+                      <li>Cannot give customers direct control panel logins</li>
+                      <li>Cannot automate reselling with billing software</li>
+                      <li>Cannot hide MXroute's URL/logo</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="service-list reseller">
+                <h3>Reseller Service</h3>
+                <p>Reseller service provides:</p>
+                <ul>
+                  <li>Same core MXroute service</li>
+                  <li>Higher-level permissions</li>
+                  <li>Ability to:
+                    <ul>
+                      <li>Create separate control panel accounts for each customer</li>
+                      <li>Give customers unique logins to manage their own domains/email</li>
+                      <li>Customize control panel appearance (style, layout, logo)</li>
+                      <li>Hide login behind your own domain (e.g., mailadmin.yourdomain.com)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>Key Characteristics</h2>
+            <div class="service-list">
+              <ul>
+                <li><strong>Requires manual configuration</strong> of customer packages</li>
+                <li><strong>Not ready-to-use</strong> - needs setup work before customers can use it</li>
+                <li>Provides a <strong>"blank template"</strong> that you must customize for your business</li>
+                <li>Includes storage limit settings and user management tools</li>
+                <li>Comes with tutorials to guide you through the setup process</li>
+                <li><strong>Less polished</strong> than standard service - designed for customization</li>
+              </ul>
+            </div>
+            
+            <div class="service-list" style="border-left-color: #ffc107; background: #fff8e1;">
+              <h3 style="color: #e65100;">⚠️ Setup Required</h3>
+              <p>Unlike our standard email hosting that works immediately, reseller service requires you to:</p>
+              <ul>
+                <li>Follow setup tutorials to configure the service</li>
+                <li>Customize the control panel for your brand</li>
+                <li>Set up customer packages and billing integration</li>
+                <li>Configure your own domain for customer logins</li>
+              </ul>
+              <p><strong>If you're looking for plug-and-play email hosting, choose our standard service instead.</strong></p>
+            </div>
+
+            <h2>Recommended For</h2>
+            <p>Reseller service is ideal for users who want to:</p>
+            <div class="service-list">
+              <ul>
+                <li>Delegate control of service portions to customers</li>
+                <li>Create a white-labeled email hosting platform</li>
+                <li>Offer email hosting services under their own brand</li>
+                <li>Provide customers with direct access to manage their own email accounts</li>
+              </ul>
+            </div>
+
+            <div class="highlight-box">
+              <h3>Need Help Getting Started?</h3>
+              <p>Detailed setup tutorials are available to guide you through the reseller configuration process.</p>
+              <p><a href="https://mxroutehelp.com/index.php/category/reseller/" target="_blank">View Reseller Setup Tutorials</a></p>
+            </div>
+
+          </div>
         </div>
-    </section>
-        <section id="plans">
-        <div id="plans-inner-container">
-            <div class="row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2 class="h1">Plans & Pricing</h2></div></div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plan-box">
-                  <div class="plan-box-plan-name">Reseller75</div>
-                  <div class="plan-box-plan-desc">
-                    <p><strong>75 GB</strong> Storage</p>
-                    <p>Unlimited Domains</p>
-                    <p>Unlimited Email Accounts</p>
-		    <p><a href="reseller-info.html" aria-label="Read important information about reseller services before purchasing">READ BEFORE YOU BUY!</a><p> 
-                 </div>                       
-                  <div class="plan-box-price-box"><span class="plan-box-plan-price">$30</span> <span class="plan-box-plan-term">/quarter</span></div>
-                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=100" class="btn btn-lg btn-default btn-plan-box-order" aria-label="Order Reseller75 plan for $30 per quarter">Get Started</a></div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plan-box">
-                  <div class="plan-box-plan-name">Reseller150</div>
-                  <div class="plan-box-plan-desc">
-                    <p><strong>150 GB</strong> Storage</p>
-                    <p>Unlimited Domains</p>
-                    <p>Unlimited Email Accounts</p>
-                    <p><a href="reseller-info.html" aria-label="Read important information about reseller services before purchasing">READ BEFORE YOU BUY!</a><p>
-                  </div>                       
-                  <div class="plan-box-price-box"><span class="plan-box-plan-price">$15</span> <span class="plan-box-plan-term">/month</span></div>
-                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=101" class="btn btn-lg btn-default btn-plan-box-order" aria-label="Order Reseller150 plan for $15 per month">Get Started</a></div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plan-box">
-                  <div class="plan-box-plan-name">Reseller200</div>
-                  <div class="plan-box-plan-desc">
-                    <p><strong>200 GB</strong> Storage</p>
-                    <p>Unlimited Domains</p>
-                    <p>Unlimited Email Accounts</p>
-                    <p><a href="reseller-info.html" aria-label="Read important information about reseller services before purchasing">READ BEFORE YOU BUY!</a><p>
-                  </div>                       
-                  <div class="plan-box-price-box"><span class="plan-box-plan-price">$25</span> <span class="plan-box-plan-term">/month</span></div>
-                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=102" class="btn btn-lg btn-default btn-plan-box-order" aria-label="Order Reseller200 plan for $25 per month">Get Started</a></div>
-                </div>
-        </div>
-    </section>
+      </section>
       </main>
       <footer id="footer" role="contentinfo"> 
       <div class="container">
         <div class="row">
           <div id="footer-contacts" class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-            <a href="./" aria-label="MXroute home page">
+            <a href="./" aria-label="MXroute - Return to homepage">
             <svg version="1.1" id="bottom-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="37.351 28.421 601.043 105.379" enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
               <g>
                 <g id="M">
@@ -255,10 +427,10 @@ a:hover #ico-x { fill: #1da1f2; }
             <div class="row" id="footer-bottom-row">
               <div class="col-lg-9 col-md-9 col-sm-10 col-xs-12" style="padding: 0px 0px;">
                 <ul>
-                      <li><a href="policy.html" aria-label="Read our privacy policy">Policy</a></li>
-                      <li><a href="https://accounts.mxroute.com/index.php?/news/" aria-label="View company news">News</a></li>
-                      <li><a href="https://status.mxroute.com" aria-label="Check service status">Status</a></li>
-                      <li><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets" aria-label="Contact support">Contact</a></li>  
+                      <li><a href="policy.html" aria-label="Privacy Policy and Terms">Policy</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/news/" aria-label="News and announcements (opens in new tab)" target="_blank">News</a></li>
+                      <li><a href="https://status.mxroute.com" aria-label="Service status page (opens in new tab)" target="_blank">Status</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets" aria-label="Contact support (opens in new tab)" target="_blank">Contact</a></li>  
                 </ul>
               </div>  
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="social-icons">
@@ -267,18 +439,6 @@ a:hover #ico-x { fill: #1da1f2; }
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>   
                 </a>
-                <!--<a href="http://www.facebook.com/mxroute" target="_blank">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 266.893 266.895" enable-background="new 0 0 266.893 266.895"
-                     xml:space="preserve" id="ico-facebook">
-                    <path id="ico-facebook-fill-bg" d="M248.082,262.307c7.854,0,14.223-6.369,14.223-14.225V18.812
-                      c0-7.857-6.368-14.224-14.223-14.224H18.812c-7.857,0-14.224,6.367-14.224,14.224v229.27c0,7.855,6.366,14.225,14.224,14.225
-                      H248.082z"/>
-                    <path id="ico-facebook-fill-fg" d="M182.409,262.307v-99.803h33.499l5.016-38.895h-38.515V98.777c0-11.261,3.127-18.935,19.275-18.935
-                      l20.596-0.009V45.045c-3.562-0.474-15.788-1.533-30.012-1.533c-29.695,0-50.025,18.126-50.025,51.413v28.684h-33.585v38.895h33.585
-                      v99.803H182.409z"/>
-                  </svg>
-                </a>-->
               </div>
             </div>
           </div>
