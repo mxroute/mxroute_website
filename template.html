@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MXroute - Policy</title>
+    <title>MXroute - Template Page</title>
     <!-- Bootstrap -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300|Open+Sans+Condensed:300" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
+    <script defer data-domain="mxroute.com" src="https://analytics.mxroute.app/js/plausible.js"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32">
@@ -17,6 +18,12 @@
     <link rel="shortcut icon" href="images/favicons/favicon.ico">
     <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <style>
+    #ico-x { width: 32px; height: 32px; margin-right: 15px; display: inline-block; vertical-align: top; fill: rgba(255,255,255,0.15); transition: all 0.1s ease-out; }
+    @media (min-width:788px) { #ico-x { width: 22px; height: 22px; margin-right: 10px; } }
+    a:hover #ico-x { fill: #1da1f2; }
+    </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,9 +37,11 @@
     <![endif]-->
   </head>
   <body>
-      <header>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only sr-only-focusable" style="position: absolute; top: 0; left: 0; z-index: 9999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none;">Skip to main content</a>
+      <header role="banner">
       <!-- Static navbar -->
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Main navigation">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,10 +50,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./">
+            <a class="navbar-brand" href="./" aria-label="MXroute - Return to homepage">
               <svg version="1.1" id="top-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  height="100%" viewBox="37.351 28.421 601.043 105.379"
-                 enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve">
+                 enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
                 <g>
                   <g id="M">
                     <path fill="#5A5A5A" d="M54.938,132.605H37.351V28.421h27.425l31.449,65.433l31.449-65.433h27.276v104.185h-17.588V51.226
@@ -88,28 +97,30 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://mxroutedocs.com/"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
-                <li><a href="https://blog.mxroute.com"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
-                <li><a href="https://headwayapp.co/mxroute-changelog"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
-                <li><a href="https://status.mxroute.com"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
+                <li><a href="https://mxroutedocs.com/" aria-label="Documentation (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
+                <li><a href="https://blog.mxroute.com" aria-label="Blog (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
+                <li><a href="https://headwayapp.co/mxroute-changelog" aria-label="Changelog (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
+                <li><a href="https://status.mxroute.com" aria-label="Status page (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
                 <li><a href="reseller.html"><span class="glyphicon glyphicon-piggy-bank navbar-mobile-icon" aria-hidden="true"></span>Reseller</a></li>
-                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
+                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button" aria-label="Login to client area (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
     </header>
+      <main id="main-content" role="main">
       <section class="default">
         <div class="container">
 	CONTENT GOES HERE
         </div>
     </section>
-      <footer id="footer"> 
+      </main>
+      <footer id="footer" role="contentinfo"> 
       <div class="container">
         <div class="row">
           <div id="footer-contacts" class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-            <a href="./">
-            <svg version="1.1" id="bottom-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="37.351 28.421 601.043 105.379" enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve">
+            <a href="./" aria-label="MXroute - Return to homepage">
+            <svg version="1.1" id="bottom-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="37.351 28.421 601.043 105.379" enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
               <g>
                 <g id="M">
                   <path fill="#5A5A5A" d="M54.938,132.605H37.351V28.421h27.425l31.449,65.433l31.449-65.433h27.276v104.185h-17.588V51.226
@@ -160,17 +171,16 @@
             <div class="row" id="footer-bottom-row">
               <div class="col-lg-9 col-md-9 col-sm-10 col-xs-12" style="padding: 0px 0px;">
                 <ul>
-                      <li><a href="policy.html">Policy</a></li>
-                      <li><a href="https://billing.mxroute.com/announcements.php">News</a></li>
-                      <li><a href="http://status.mxroute.com/">Status</a></li>
-                      <li><a href="https://billing.mxroute.com/submitticket.php?step=2&amp;deptid=1">Contact</a></li>  
+                      <li><a href="policy.html" aria-label="Privacy Policy and Terms">Policy</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/news/" aria-label="News and announcements (opens in new tab)" target="_blank">News</a></li>
+                      <li><a href="https://status.mxroute.com" aria-label="Service status page (opens in new tab)" target="_blank">Status</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets" aria-label="Contact support (opens in new tab)" target="_blank">Contact</a></li>  
                 </ul>
               </div>  
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="social-icons">
-                <a href="https://freesocial.co/@mxroute" target="_blank">
-                  <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.00006 244.18703" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="ico-twitter">
-                     <g transform="translate(-539.18 -568.86)">
-                      <path id="ico-twitter-fill" d="m633.9 812.04c112.46 0 173.96-93.168 173.96-173.96 0-2.6463-0.0539-5.2806-0.1726-7.903 11.938-8.6302 22.314-19.4 30.498-31.66-10.955 4.8694-22.744 8.1474-35.111 9.6255 12.623-7.5693 22.314-19.543 26.886-33.817-11.813 7.0031-24.895 12.093-38.824 14.841-11.157-11.884-27.041-19.317-44.629-19.317-33.764 0-61.144 27.381-61.144 61.132 0 4.7978 0.5364 9.4646 1.5854 13.941-50.815-2.5569-95.874-26.886-126.03-63.88-5.2508 9.0354-8.2785 19.531-8.2785 30.73 0 21.212 10.794 39.938 27.208 50.893-10.031-0.30992-19.454-3.0635-27.69-7.6468-0.009 0.25652-0.009 0.50661-0.009 0.78077 0 29.61 21.075 54.332 49.051 59.934-5.1376 1.4006-10.543 2.1516-16.122 2.1516-3.9336 0-7.766-0.38716-11.491-1.1026 7.7838 24.293 30.355 41.971 57.115 42.465-20.926 16.402-47.287 26.171-75.937 26.171-4.929 0-9.7983-0.28036-14.584-0.84634 27.059 17.344 59.189 27.464 93.722 27.464"/>                     </g>
+                <a href="https://x.com/mxroute/" target="_blank" aria-label="Follow MXroute on X (opens in new tab)">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ico-x" role="img" aria-label="X logo">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>   
                 </a>
                 <!--<a href="http://www.facebook.com/mxroute" target="_blank">
