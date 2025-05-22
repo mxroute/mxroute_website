@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MXroute - Large Storage Email Plans</title>
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <script defer data-domain="mxroute.com" src="https://analytics.mxroute.app/js/plausible.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#b80063">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico">
+    <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+    #ico-x { width: 32px; height: 32px; margin-right: 15px; display: inline-block; vertical-align: top; fill: rgba(255,255,255,0.15); transition: all 0.1s ease-out; }
+    @media (min-width:788px) { #ico-x { width: 22px; height: 22px; margin-right: 10px; } }
+    a:hover #ico-x { fill: #1da1f2; }
+    
+    /* Large Storage Plans Styling */
+    .storage-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-size: 16px;
+    }
+    
+    .storage-content h1 {
+        color: #1c4185;
+        border-bottom: 4px solid #cc2683;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .intro-section {
+        background: #f8f9fa;
+        border: 2px solid #1c4185;
+        color: #333;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px 0;
+        text-align: center;
+    }
+    
+    .intro-section h2 {
+        color: #1c4185;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+    
+    .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 40px 0;
+    }
+    
+    .storage-plan {
+        background: #fff;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .storage-plan:hover {
+        border-color: #cc2683;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(204, 38, 131, 0.15);
+    }
+    
+    .storage-plan.featured {
+        border-color: #cc2683;
+        position: relative;
+        transform: scale(1.05);
+    }
+    
+    .storage-plan.featured::before {
+        content: "POPULAR";
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #cc2683, #1c4185);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    
+    .plan-storage {
+        font-size: 2.5em;
+        font-weight: 300;
+        color: #1c4185;
+        margin-bottom: 10px;
+    }
+    
+    .plan-storage .unit {
+        font-size: 0.6em;
+        color: #666;
+    }
+    
+    .plan-pricing {
+        margin: 20px 0;
+    }
+    
+    .plan-price {
+        font-size: 1.8em;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    .plan-price.annual {
+        color: #28a745;
+        margin-bottom: 8px;
+    }
+    
+    .plan-price.monthly {
+        font-size: 1.2em;
+        color: #666;
+    }
+    
+    .plan-term {
+        font-size: 0.9em;
+        color: #666;
+    }
+    
+    .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+    
+    .plan-features li {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        color: #555;
+    }
+    
+    .plan-features li:last-child {
+        border-bottom: none;
+    }
+    
+    .plan-features li::before {
+        content: "✓";
+        color: #28a745;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    
+    .plan-cta {
+        margin-top: 25px;
+    }
+    
+    .plan-cta .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1em;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-storage {
+        background: linear-gradient(135deg, #1c4185, #cc2683);
+        border: none;
+        color: white;
+    }
+    
+    .btn-storage:hover {
+        background: linear-gradient(135deg, #cc2683, #1c4185);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(204, 38, 131, 0.3);
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #cc2683;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .back-link:hover {
+        color: #1c4185;
+        text-decoration: none;
+    }
+    
+    .back-link:before {
+        content: "← ";
+        margin-right: 5px;
+    }
+    
+    .features-comparison {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        margin: 40px 0;
+    }
+    
+    .features-comparison h3 {
+        color: #1c4185;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 1.4em;
+    }
+    
+    .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .comparison-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #cc2683;
+    }
+    
+    .comparison-item h4 {
+        color: #1c4185;
+        margin-bottom: 10px;
+    }
+    
+    .savings-badge {
+        background: #d4edda;
+        color: #155724;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        margin-left: 8px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .storage-content {
+            padding: 0 15px;
+        }
+        
+        .storage-content h1 {
+            font-size: 2em;
+        }
+        
+        .plans-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .storage-plan.featured {
+            transform: none;
+        }
+        
+        .plan-storage {
+            font-size: 2em;
+        }
+        
+        .intro-section {
+            padding: 20px 15px;
+        }
+    }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript">
+          window.location = window.location.hostname + "/not-supported.html";
+      </script>
+    <![endif]-->
+    <!--[if IE 9]>
+      <link rel="stylesheet" type="text/css" href="css/ie9.css" />
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only sr-only-focusable" style="position: absolute; top: 0; left: 0; z-index: 9999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none;">Skip to main content</a>
+      <header role="banner">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./" aria-label="MXroute - Return to homepage">
+              <svg version="1.1" id="top-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 height="100%" viewBox="37.351 28.421 601.043 105.379"
+                 enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
+                <g>
+                  <g id="M">
+                    <path fill="#5A5A5A" d="M54.938,132.605H37.351V28.421h27.425l31.449,65.433l31.449-65.433h27.276v104.185h-17.588V51.226
+                      l-36.368,72.29h-9.837l-36.219-72.29V132.605z"/>
+                  </g>
+                  
+                    <linearGradient id="X_1_" gradientUnits="userSpaceOnUse" x1="174.1348" y1="25.1431" x2="260.2344" y2="127.7526" gradientTransform="matrix(1 0 0 -1 0 156.9922)">
+                    <stop  offset="0.0051" style="stop-color:#EE2078"/>
+                    <stop  offset="1" style="stop-color:#A32C91"/>
+                  </linearGradient>
+                  <path id="X_2_" fill="url(#X_1_)" d="M175.039,28.482l33.807,52.062l-33.807,52.063V28.482z M259.331,28.482l-33.808,52.062
+                    l33.808,52.062V28.482z" class="logo-x"/>
+                  <g id="route_2_">
+                    <path fill="#929292" d="M322.55,68.963c-8.249,0-14.458,2.683-18.631,8.048c-4.173,5.365-6.26,12.572-6.26,21.612v33.982h-16.694
+                      V53.313h16.694v15.948c2.683-4.967,6.334-9.041,10.955-12.222c4.621-3.179,9.514-4.819,14.682-4.919l0.149,16.843
+                      C323.147,68.963,322.849,68.963,322.55,68.963z"/>
+                    <path fill="#929292" d="M398.295,121.949c-7.951,7.898-17.886,11.85-29.81,11.85c-11.925,0-21.861-3.949-29.811-11.85
+                      c-7.951-7.899-11.924-17.563-11.924-28.989c0-11.426,3.973-21.091,11.924-28.990c7.949-7.9,17.886-11.85,29.811-11.85
+                      c11.924,0,21.857,3.95,29.81,11.85c7.948,7.899,11.924,17.564,11.924,28.99C410.219,104.389,406.244,114.05,398.295,121.949z
+                       M350.525,111.665c4.719,4.821,10.706,7.229,17.961,7.229c7.252,0,13.238-2.408,17.96-7.229c4.719-4.817,7.08-11.054,7.08-18.705
+                      c0-7.649-2.361-13.885-7.08-18.706c-4.722-4.818-10.708-7.229-17.96-7.229c-7.255,0-13.242,2.411-17.961,7.229
+                      c-4.722,4.821-7.08,11.057-7.08,18.706C343.445,100.611,345.804,106.848,350.525,111.665z"/>
+                    <path fill="#929292" d="M478.095,96.238V53.313h16.693v79.294h-16.693v-14.459c-2.684,4.871-6.386,8.696-11.104,11.478
+                      c-4.722,2.783-9.813,4.174-15.277,4.174c-8.942,0-16.172-2.731-21.687-8.196c-5.516-5.465-8.272-13.363-8.272-23.699v-48.59
+                      h16.693v43.522c0,14.605,6.06,21.91,18.185,21.91c5.762,0,10.78-1.912,15.054-5.738
+                      C475.957,109.184,478.095,103.593,478.095,96.238z"/>
+                    <path fill="#929292" d="M531.632,66.727v40.243c0,3.777,0.992,6.782,2.981,9.019c1.985,2.236,4.77,3.354,8.347,3.354
+                      s7.005-1.736,10.284-5.217L560.1,125.9c-5.863,5.268-12.348,7.898-19.45,7.898c-7.105,0-13.167-2.459-18.185-7.378
+                      c-5.019-4.919-7.526-11.551-7.526-19.897V66.727h-9.986V53.313h9.986V28.421h16.692v24.891H552.5v13.415H531.632z"/>
+                    <path fill="#929292" d="M638.395,100.264h-62.151c0.396,5.764,3.029,10.409,7.899,13.937c4.867,3.528,10.433,5.291,16.693,5.291
+                      c9.935,0,17.486-3.13,22.654-9.39l9.539,10.433c-8.547,8.846-19.674,13.266-33.388,13.266c-11.129,0-20.594-3.7-28.394-11.104
+                      c-7.802-7.399-11.7-17.338-11.7-29.81c0-12.469,3.975-22.38,11.924-29.735c7.949-7.353,17.313-11.03,28.097-11.03
+                      c10.78,0,19.946,3.256,27.5,9.763c7.549,6.509,11.326,15.478,11.326,26.903V100.264L638.395,100.264z M576.243,87.146h45.459
+                      c0-6.656-2.086-11.775-6.26-15.353c-4.173-3.577-9.314-5.366-15.427-5.366c-6.111,0-11.604,1.863-16.471,5.589
+                      C578.676,75.745,576.243,80.789,576.243,87.146z"/>
+                  </g>
+                </g>
+              </svg>
+            </a>
+
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://mxroutedocs.com/" aria-label="Documentation (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
+                <li><a href="https://blog.mxroute.com" aria-label="Blog (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
+                <li><a href="https://headwayapp.co/mxroute-changelog" aria-label="Changelog (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
+                <li><a href="https://status.mxroute.com" aria-label="Status page (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
+                <li><a href="reseller.html"><span class="glyphicon glyphicon-piggy-bank navbar-mobile-icon" aria-hidden="true"></span>Reseller</a></li>
+                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button" aria-label="Login to client area (opens in new tab)" target="_blank"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </header>
+      <main id="main-content" role="main">
+      <section class="default">
+        <div class="container">
+          <div class="storage-content">
+            <a href="index.html" class="back-link">Back to Main Plans</a>
+            
+            <h1>Large Storage Email Plans</h1>
+            
+            <div class="intro-section">
+              <h2>Need More Space?</h2>
+              <p>Our large storage plans are perfect for businesses, organizations, and users who need significant email storage capacity. All plans include the same reliable MXroute service with unlimited domains and email accounts.</p>
+            </div>
+
+            <div class="features-comparison">
+              <h3>What's Included in Every Large Storage Plan</h3>
+              <div class="comparison-grid">
+                <div class="comparison-item">
+                  <h4>📧 Unlimited Email Accounts</h4>
+                  <p>Create as many email addresses as you need</p>
+                </div>
+                <div class="comparison-item">
+                  <h4>🌐 Unlimited Domains</h4>
+                  <p>Host email for multiple domains</p>
+                </div>
+                <div class="comparison-item">
+                  <h4>⚡ 400 Outbound Emails/Hour</h4>
+                  <p>Per email account sending limit</p>
+                </div>
+                <div class="comparison-item">
+                  <h4>🔒 Multi-Layer Spam Protection</h4>
+                  <p>Custom SpamAssassin rules, internal ACLs, and proprietary filtering</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="plans-grid">
+              <!-- 100GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">100<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$100<span class="plan-term">/year</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=207" class="btn btn-storage" aria-label="Order 100GB plan for $100 per year">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 200GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">200<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$150<span class="plan-term">/year</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=208" class="btn btn-storage" aria-label="Order 200GB plan for $150 per year">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 300GB Plan - Featured -->
+              <div class="storage-plan featured">
+                <div class="plan-storage">300<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$200<span class="plan-term">/year</span> <span class="savings-badge">Save $40</span></div>
+                  <div class="plan-price monthly">$20<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=209" class="btn btn-storage" aria-label="Order 300GB plan - annual $200 or monthly $20">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 400GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">400<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$250<span class="plan-term">/year</span> <span class="savings-badge">Save $50</span></div>
+                  <div class="plan-price monthly">$25<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=210" class="btn btn-storage" aria-label="Order 400GB plan - annual $250 or monthly $25">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 500GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">500<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$300<span class="plan-term">/year</span> <span class="savings-badge">Save $60</span></div>
+                  <div class="plan-price monthly">$30<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=211" class="btn btn-storage" aria-label="Order 500GB plan - annual $300 or monthly $30">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 600GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">600<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$350<span class="plan-term">/year</span> <span class="savings-badge">Save $70</span></div>
+                  <div class="plan-price monthly">$35<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=212" class="btn btn-storage" aria-label="Order 600GB plan - annual $350 or monthly $35">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 700GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">700<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$400<span class="plan-term">/year</span> <span class="savings-badge">Save $80</span></div>
+                  <div class="plan-price monthly">$40<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=213" class="btn btn-storage" aria-label="Order 700GB plan - annual $400 or monthly $40">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 800GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">800<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$450<span class="plan-term">/year</span> <span class="savings-badge">Save $90</span></div>
+                  <div class="plan-price monthly">$45<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=214" class="btn btn-storage" aria-label="Order 800GB plan - annual $450 or monthly $45">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 900GB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">900<span class="unit">GB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$500<span class="plan-term">/year</span> <span class="savings-badge">Save $100</span></div>
+                  <div class="plan-price monthly">$50<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=215" class="btn btn-storage" aria-label="Order 900GB plan - annual $500 or monthly $50">Get Started</a>
+                </div>
+              </div>
+
+              <!-- 1TB Plan -->
+              <div class="storage-plan">
+                <div class="plan-storage">1<span class="unit">TB</span></div>
+                <div class="plan-pricing">
+                  <div class="plan-price annual">$550<span class="plan-term">/year</span> <span class="savings-badge">Save $110</span></div>
+                  <div class="plan-price monthly">$55<span class="plan-term">/month</span></div>
+                </div>
+                <ul class="plan-features">
+                  <li>Unlimited Domains</li>
+                  <li>Unlimited Email Accounts</li>
+                  <li>400 Outbound Emails/Hour</li>
+                  <li>IMAP, POP3, SMTP Access</li>
+                </ul>
+                <div class="plan-cta">
+                  <a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=216" class="btn btn-storage" aria-label="Order 1TB plan - annual $550 or monthly $55">Get Started</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="intro-section">
+              <h2>Questions About Large Storage Plans?</h2>
+              <p>Need help choosing the right plan or have specific requirements? Our support team is here to help guide you to the perfect email hosting solution.</p>
+              <p><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets" target="_blank" style="color: #cc2683; font-weight: 500;">Contact Support</a></p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      </main>
+      <footer id="footer" role="contentinfo"> 
+      <div class="container">
+        <div class="row">
+          <div id="footer-contacts" class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+            <a href="./" aria-label="MXroute - Return to homepage">
+            <svg version="1.1" id="bottom-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="37.351 28.421 601.043 105.379" enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
+              <g>
+                <g id="M">
+                  <path fill="#5A5A5A" d="M54.938,132.605H37.351V28.421h27.425l31.449,65.433l31.449-65.433h27.276v104.185h-17.588V51.226
+                    l-36.368,72.29h-9.837l-36.219-72.29V132.605z"/>
+                </g>
+                
+                  <linearGradient id="X_1_" gradientUnits="userSpaceOnUse" x1="174.1348" y1="25.1431" x2="260.2344" y2="127.7526" gradientTransform="matrix(1 0 0 -1 0 156.9922)">
+                  <stop  offset="0.0051" style="stop-color:#EE2078"/>
+                  <stop  offset="1" style="stop-color:#A32C91"/>
+                </linearGradient>
+                <path id="X_2_" fill="url(#X_1_)" d="M175.039,28.482l33.807,52.062l-33.807,52.063V28.482z M259.331,28.482l-33.808,52.062
+                  l33.808,52.062V28.482z"/>
+                <g id="route_2_">
+                  <path fill="#929292" d="M322.55,68.963c-8.249,0-14.458,2.683-18.631,8.048c-4.173,5.365-6.26,12.572-6.26,21.612v33.982h-16.694
+                    V53.313h16.694v15.948c2.683-4.967,6.334-9.041,10.955-12.222c4.621-3.179,9.514-4.819,14.682-4.919l0.149,16.843
+                    C323.147,68.963,322.849,68.963,322.55,68.963z"/>
+                  <path fill="#929292" d="M398.295,121.949c-7.951,7.898-17.886,11.85-29.81,11.85c-11.925,0-21.861-3.949-29.811-11.85
+                    c-7.951-7.899-11.924-17.563-11.924-28.989c0-11.426,3.973-21.091,11.924-28.99c7.949-7.9,17.886-11.85,29.811-11.85
+                    c11.924,0,21.857,3.95,29.81,11.85c7.948,7.899,11.924,17.564,11.924,28.99C410.219,104.389,406.244,114.05,398.295,121.949z
+                     M350.525,111.665c4.719,4.821,10.706,7.229,17.961,7.229c7.252,0,13.238-2.408,17.96-7.229c4.719-4.817,7.08-11.054,7.08-18.705
+                    c0-7.649-2.361-13.885-7.08-18.706c-4.722-4.818-10.708-7.229-17.96-7.229c-7.255,0-13.242,2.411-17.961,7.229
+                    c-4.722,4.821-7.08,11.057-7.08,18.706C343.445,100.611,345.804,106.848,350.525,111.665z"/>
+                  <path fill="#929292" d="M478.095,96.238V53.313h16.693v79.294h-16.693v-14.459c-2.684,4.871-6.386,8.696-11.104,11.478
+                    c-4.722,2.783-9.813,4.174-15.277,4.174c-8.942,0-16.172-2.731-21.687-8.196c-5.516-5.465-8.272-13.363-8.272-23.699v-48.59
+                    h16.693v43.522c0,14.605,6.06,21.91,18.185,21.91c5.762,0,10.78-1.912,15.054-5.738
+                    C475.957,109.184,478.095,103.593,478.095,96.238z"/>
+                  <path fill="#929292" d="M531.632,66.727v40.243c0,3.777,0.992,6.782,2.981,9.019c1.985,2.236,4.77,3.354,8.347,3.354
+                    s7.005-1.736,10.284-5.217L560.1,125.9c-5.863,5.268-12.348,7.898-19.45,7.898c-7.105,0-13.167-2.459-18.185-7.378
+                    c-5.019-4.919-7.526-11.551-7.526-19.897V66.727h-9.986V53.313h9.986V28.421h16.692v24.891H552.5v13.415H531.632z"/>
+                  <path fill="#929292" d="M638.395,100.264h-62.151c0.396,5.764,3.029,10.409,7.899,13.937c4.867,3.528,10.433,5.291,16.693,5.291
+                    c9.935,0,17.486-3.13,22.654-9.39l9.539,10.433c-8.547,8.846-19.674,13.266-33.388,13.266c-11.129,0-20.594-3.7-28.394-11.104
+                    c-7.802-7.399-11.7-17.338-11.7-29.81c0-12.469,3.975-22.38,11.924-29.735c7.949-7.353,17.313-11.03,28.097-11.03
+                    c10.78,0,19.946,3.256,27.5,9.763c7.549,6.509,11.326,15.478,11.326,26.903V100.264L638.395,100.264z M576.243,87.146h45.459
+                    c0-6.656-2.086-11.775-6.26-15.353c-4.173-3.577-9.314-5.366-15.427-5.366c-6.111,0-11.604,1.863-16.471,5.589
+                    C578.676,75.745,576.243,80.789,576.243,87.146z"/>
+                </g>
+              </g>
+            </svg>     
+            </a>   
+            <p>
+              390 Main St<br>
+              Harleton, TX 75601
+            </p>
+          </div>        
+          <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <p>MXroute was started by Jarland Donnell and Ryan Arp. We are both active in the hosting industry and recognized a need for reliable email. We launched in 2013 and never looked back!</p>
+            <p>Copyright © <span id="year"></span> by MXroute</p>
+            <div class="row" id="footer-bottom-row">
+              <div class="col-lg-9 col-md-9 col-sm-10 col-xs-12" style="padding: 0px 0px;">
+                <ul>
+                      <li><a href="policy.html" aria-label="Privacy Policy and Terms">Policy</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/news/" aria-label="News and announcements (opens in new tab)" target="_blank">News</a></li>
+                      <li><a href="https://status.mxroute.com" aria-label="Service status page (opens in new tab)" target="_blank">Status</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets" aria-label="Contact support (opens in new tab)" target="_blank">Contact</a></li>  
+                </ul>
+              </div>  
+            <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="social-icons">
+                <a href="https://x.com/mxroute/" target="_blank" aria-label="Follow MXroute on X (opens in new tab)">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ico-x" role="img" aria-label="X logo">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>   
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/scripts.min.js"></script>
+    
+    <script type="text/javascript">
+      // Copyright 2014-2015 Twitter, Inc.
+      // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+      // Internet Explorer 10 in Windows 8 and Windows Phone 8
+      if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement('style')
+        msViewportStyle.appendChild(
+          document.createTextNode(
+            '@-ms-viewport{width:auto!important}'
+          )
+        )
+        document.querySelector('head').appendChild(msViewportStyle)
+      }      
+
+      // Insert the current year in the copyright string.
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>
