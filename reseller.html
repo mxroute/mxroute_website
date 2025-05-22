@@ -31,9 +31,11 @@
     <![endif]-->
   </head>
   <body>
-      <header>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only sr-only-focusable" aria-label="Skip to main content">Skip to main content</a>
+      <header role="banner">
       <!-- Static navbar -->
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Main navigation">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -42,10 +44,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./">
+            <a class="navbar-brand" href="./" aria-label="MXroute home page">
               <svg version="1.1" id="top-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  height="100%" viewBox="37.351 28.421 601.043 105.379"
-                 enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve">
+                 enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
                 <g>
                   <g id="M">
                     <path fill="#5A5A5A" d="M54.938,132.605H37.351V28.421h27.425l31.449,65.433l31.449-65.433h27.276v104.185h-17.588V51.226
@@ -89,20 +91,21 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://mxroutedocs.com/"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
-                <li><a href="https://blog.mxroute.com"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
-                <li><a href="https://headwayapp.co/mxroute-changelog"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
-                <li><a href="https://status.mxroute.com"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
-                <li><a href="reseller.html"><span class="glyphicon glyphicon-piggy-bank navbar-mobile-icon" aria-hidden="true"></span>Reseller</a></li>
-                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
+                <li><a href="https://mxroutedocs.com/" aria-label="View MXroute documentation"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Documentation</a></li>
+                <li><a href="https://blog.mxroute.com" aria-label="Read MXroute blog posts"><span class="glyphicon glyphicon-book navbar-mobile-icon" aria-hidden="true"></span>Blog</a></li>
+                <li><a href="https://headwayapp.co/mxroute-changelog" aria-label="View product changelog"><span class="glyphicon glyphicon-bullhorn navbar-mobile-icon" aria-hidden="true"></span>Changelog</a></li>
+                <li><a href="https://status.mxroute.com" aria-label="Check service status"><span class="glyphicon glyphicon-signal navbar-mobile-icon" aria-hidden="true"></span>Status</a></li>
+                <li><a href="reseller.html" aria-label="Learn about reseller services"><span class="glyphicon glyphicon-piggy-bank navbar-mobile-icon" aria-hidden="true"></span>Reseller</a></li>
+                <li><a id="navbar-login-button" href="https://accounts.mxroute.com/index.php?/clientarea/" role="button" aria-label="Login to your account"><span class="glyphicon glyphicon-user navbar-mobile-icon" aria-hidden="true"></span>Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
     </header>
+      <main role="main" id="main-content">
       <section id="cover">
       <div id="inner-cover">
-          <svg version="1.1" id="MXRouteIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-15.438 -14.883 440 300" enable-background="new -15.438 -14.883 440 300" xml:space="preserve" width="100%" height="100%" class="cover-icon">
+          <svg version="1.1" id="MXRouteIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-15.438 -14.883 440 300" enable-background="new -15.438 -14.883 440 300" xml:space="preserve" width="100%" height="100%" class="cover-icon" role="img" aria-label="MXroute email hosting icon">
             <linearGradient id="Background_1_" gradientUnits="userSpaceOnUse" x1="76.2876" y1="860.7878" x2="242.94" y2="720.9498" gradientTransform="matrix(1 0 0 1 0 -520.7656)">
                 <stop  offset="0%" class="icon-gradient-light"/>
                 <stop  offset="90%" class="icon-gradient-dark"/>
@@ -119,7 +122,7 @@
 
           <h1>You asked, we answered</h1>
           <h4>You can now control how your clients interact with our service</h4>
-          <a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services" class="btn btn-lg btn-primary promo-button">Read before you buy</a>
+          <a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services" class="btn btn-lg btn-primary promo-button" aria-label="Read important information about reseller services before purchasing">Read before you buy</a>
       </div>
     </section>
       <section id="features">
@@ -161,10 +164,10 @@
                     <p><strong>75 GB</strong> Storage</p>
                     <p>Unlimited Domains</p>
                     <p>Unlimited Email Accounts</p>
-		    <p><a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services">READ BEFORE YOU BUY!</a><p> 
+		    <p><a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services" aria-label="Read important information about reseller services before purchasing">READ BEFORE YOU BUY!</a><p> 
                  </div>                       
                   <div class="plan-box-price-box"><span class="plan-box-plan-price">$30</span> <span class="plan-box-plan-term">/quarter</span></div>
-                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=100" class="btn btn-lg btn-default btn-plan-box-order">Get Started</a></div>
+                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=100" class="btn btn-lg btn-default btn-plan-box-order" aria-label="Order Reseller75 plan for $30 per quarter">Get Started</a></div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plan-box">
                   <div class="plan-box-plan-name">Reseller150</div>
@@ -172,10 +175,10 @@
                     <p><strong>150 GB</strong> Storage</p>
                     <p>Unlimited Domains</p>
                     <p>Unlimited Email Accounts</p>
-                    <p><a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services">READ BEFORE YOU BUY!</a><p>
+                    <p><a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services" aria-label="Read important information about reseller services before purchasing">READ BEFORE YOU BUY!</a><p>
                   </div>                       
                   <div class="plan-box-price-box"><span class="plan-box-plan-price">$15</span> <span class="plan-box-plan-term">/month</span></div>
-                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=101" class="btn btn-lg btn-default btn-plan-box-order">Get Started</a></div>
+                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=101" class="btn btn-lg btn-default btn-plan-box-order" aria-label="Order Reseller150 plan for $15 per month">Get Started</a></div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 plan-box">
                   <div class="plan-box-plan-name">Reseller200</div>
@@ -183,19 +186,20 @@
                     <p><strong>200 GB</strong> Storage</p>
                     <p>Unlimited Domains</p>
                     <p>Unlimited Email Accounts</p>
-                    <p><a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services">READ BEFORE YOU BUY!</a><p>
+                    <p><a href="https://community.mxroute.com/t/what-is-reseller-and-how-is-it-different-from-your-other-services" aria-label="Read important information about reseller services before purchasing">READ BEFORE YOU BUY!</a><p>
                   </div>                       
                   <div class="plan-box-price-box"><span class="plan-box-plan-price">$25</span> <span class="plan-box-plan-term">/month</span></div>
-                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=102" class="btn btn-lg btn-default btn-plan-box-order">Get Started</a></div>
+                  <div class="plan-box-order"><a href="https://accounts.mxroute.com/?cmd=cart&action=add&id=102" class="btn btn-lg btn-default btn-plan-box-order" aria-label="Order Reseller200 plan for $25 per month">Get Started</a></div>
                 </div>
         </div>
     </section>
-      <footer id="footer"> 
+      </main>
+      <footer id="footer" role="contentinfo"> 
       <div class="container">
         <div class="row">
           <div id="footer-contacts" class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-            <a href="./">
-            <svg version="1.1" id="bottom-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="37.351 28.421 601.043 105.379" enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve">
+            <a href="./" aria-label="MXroute home page">
+            <svg version="1.1" id="bottom-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="37.351 28.421 601.043 105.379" enable-background="new 37.351 28.421 601.043 105.379" xml:space="preserve" role="img" aria-label="MXroute logo">
               <g>
                 <g id="M">
                   <path fill="#5A5A5A" d="M54.938,132.605H37.351V28.421h27.425l31.449,65.433l31.449-65.433h27.276v104.185h-17.588V51.226
@@ -246,15 +250,15 @@
             <div class="row" id="footer-bottom-row">
               <div class="col-lg-9 col-md-9 col-sm-10 col-xs-12" style="padding: 0px 0px;">
                 <ul>
-                      <li><a href="policy.html">Policy</a></li>
-                      <li><a href="https://accounts.mxroute.com/index.php?/news/">News</a></li>
-                      <li><a href="https://status.mxroute.com">Status</a></li>
-                      <li><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets">Contact</a></li>  
+                      <li><a href="policy.html" aria-label="Read our privacy policy">Policy</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/news/" aria-label="View company news">News</a></li>
+                      <li><a href="https://status.mxroute.com" aria-label="Check service status">Status</a></li>
+                      <li><a href="https://accounts.mxroute.com/index.php?/login/&redirect=%3Fcmd%3Dtickets" aria-label="Contact support">Contact</a></li>  
                 </ul>
               </div>  
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="social-icons">
-                <a href="https://freesocial.co/@mxroute" target="_blank">
-                  <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.00006 244.18703" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="ico-twitter">
+                <a href="https://freesocial.co/@mxroute" target="_blank" aria-label="Follow MXroute on Mastodon">
+                  <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.00006 244.18703" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="ico-twitter" role="img" aria-label="Mastodon social media icon">
                      <g transform="translate(-539.18 -568.86)">
                       <path id="ico-twitter-fill" d="m633.9 812.04c112.46 0 173.96-93.168 173.96-173.96 0-2.6463-0.0539-5.2806-0.1726-7.903 11.938-8.6302 22.314-19.4 30.498-31.66-10.955 4.8694-22.744 8.1474-35.111 9.6255 12.623-7.5693 22.314-19.543 26.886-33.817-11.813 7.0031-24.895 12.093-38.824 14.841-11.157-11.884-27.041-19.317-44.629-19.317-33.764 0-61.144 27.381-61.144 61.132 0 4.7978 0.5364 9.4646 1.5854 13.941-50.815-2.5569-95.874-26.886-126.03-63.88-5.2508 9.0354-8.2785 19.531-8.2785 30.73 0 21.212 10.794 39.938 27.208 50.893-10.031-0.30992-19.454-3.0635-27.69-7.6468-0.009 0.25652-0.009 0.50661-0.009 0.78077 0 29.61 21.075 54.332 49.051 59.934-5.1376 1.4006-10.543 2.1516-16.122 2.1516-3.9336 0-7.766-0.38716-11.491-1.1026 7.7838 24.293 30.355 41.971 57.115 42.465-20.926 16.402-47.287 26.171-75.937 26.171-4.929 0-9.7983-0.28036-14.584-0.84634 27.059 17.344 59.189 27.464 93.722 27.464"/>
                      </g>
