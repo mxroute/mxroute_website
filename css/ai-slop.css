@@ -421,16 +421,16 @@ body {
   margin-right: 8px;
   opacity: 1 !important;
   background: transparent !important;
-  border: 2px solid rgba(255, 255, 255, 0.6) !important;
-  color: #fff !important;
+  border: 2px solid #333 !important;
+  color: #333 !important;
   font-size: 14px;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
 }
 
 .promo-button-secondary:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-color: #fff !important;
+  background: #333 !important;
+  border-color: #333 !important;
   color: #fff !important;
 }
 
