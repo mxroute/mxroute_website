@@ -413,6 +413,25 @@ body {
   animation: button-glow 2s ease-in-out infinite !important;
 }
 
+.promo-button-secondary {
+  display: inline-block;
+  margin-top: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  color: #fff !important;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.promo-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
 @keyframes button-glow {
   0%, 100% {
     box-shadow: 0 0 10px rgba(238, 32, 120, 0.5);
