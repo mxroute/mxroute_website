@@ -410,6 +410,7 @@ body {
 
 /* Make the promo button extra obnoxious */
 .promo-button {
+  opacity: 1 !important;
   animation: button-glow 2s ease-in-out infinite !important;
 }
 
@@ -418,6 +419,7 @@ body {
   margin-top: 12px;
   margin-left: 8px;
   margin-right: 8px;
+  opacity: 1 !important;
   background: transparent !important;
   border: 2px solid rgba(255, 255, 255, 0.6) !important;
   color: #fff !important;
