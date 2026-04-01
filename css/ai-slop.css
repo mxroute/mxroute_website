@@ -1,0 +1,430 @@
+/* =============================================================
+   AI SLOP MODE - "The AI Has Taken Over MXroute"
+   April Fools 2026
+   ============================================================= */
+
+/* Rainbow shimmer on headings */
+@keyframes rainbow-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ai-shimmer {
+  background: linear-gradient(90deg, #ee2078, #ff6b35, #ffd700, #00ff88, #00bfff, #a32c91, #ee2078);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shimmer 3s ease infinite;
+}
+
+/* Floating emoji container */
+.ai-floater {
+  position: fixed;
+  font-size: 24px;
+  pointer-events: none;
+  z-index: 9998;
+  animation: float-up linear forwards;
+  opacity: 0.7;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Sparkle cursor trail */
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  font-size: 16px;
+  animation: sparkle-fade 0.8s ease-out forwards;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* POWERED BY AI badge */
+#ai-badge {
+  position: fixed;
+  top: 80px;
+  right: -5px;
+  background: linear-gradient(135deg, #ee2078, #a32c91, #1c4185);
+  color: white;
+  padding: 8px 20px 8px 15px;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 10000;
+  border-radius: 4px 0 0 4px;
+  animation: badge-pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(238, 32, 120, 0.5), 0 0 40px rgba(163, 44, 145, 0.3);
+  text-transform: uppercase;
+  writing-mode: horizontal-tb;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(238, 32, 120, 0.5), 0 0 40px rgba(163, 44, 145, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(238, 32, 120, 0.8), 0 0 60px rgba(163, 44, 145, 0.5), 0 0 80px rgba(28, 65, 133, 0.3);
+    transform: scale(1.05);
+  }
+}
+
+/* Marquee ticker */
+#ai-marquee {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #1a1a2e, #16213e, #0f3460);
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 6px 0;
+  z-index: 10001;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid #00ff88;
+  box-shadow: 0 -5px 20px rgba(0, 255, 136, 0.2);
+}
+
+#ai-marquee .marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 45s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* AI Chat Widget */
+#ai-chat-widget {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 10002;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+#ai-chat-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ee2078, #a32c91);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(238, 32, 120, 0.4);
+  transition: transform 0.3s ease;
+  animation: chat-bob 3s ease-in-out infinite;
+}
+
+#ai-chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+@keyframes chat-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+#ai-chat-window {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 320px;
+  max-height: 400px;
+  background: #1a1a2e;
+  border: 2px solid #a32c91;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#ai-chat-window.open {
+  display: flex;
+  flex-direction: column;
+}
+
+#ai-chat-header {
+  background: linear-gradient(135deg, #ee2078, #a32c91);
+  color: white;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#ai-chat-header .status-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: status-blink 2s ease-in-out infinite;
+}
+
+@keyframes status-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+#ai-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  max-height: 280px;
+}
+
+.ai-chat-msg {
+  background: #16213e;
+  color: #e0e0e0;
+  padding: 10px 14px;
+  border-radius: 12px 12px 12px 4px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  animation: msg-appear 0.3s ease-out;
+  border-left: 3px solid #a32c91;
+}
+
+@keyframes msg-appear {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.ai-chat-msg .timestamp {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  margin-top: 6px;
+}
+
+/* Toast notifications */
+.ai-toast {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #00ff88;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  z-index: 10003;
+  border: 1px solid #00ff88;
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+  opacity: 0;
+  animation: toast-show 4s ease forwards;
+  white-space: nowrap;
+}
+
+@keyframes toast-show {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+/* AI Thinking overlay */
+#ai-thinking-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 30, 0.95);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Courier New', monospace;
+  transition: opacity 0.5s ease;
+}
+
+#ai-thinking-overlay .thinking-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  animation: thinking-pulse 1.5s ease-in-out infinite;
+}
+
+#ai-thinking-overlay .thinking-subtext {
+  font-size: 14px;
+  color: #00ff88;
+  max-width: 400px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+#ai-thinking-overlay .thinking-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(238, 32, 120, 0.3);
+  border-top-color: #ee2078;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes thinking-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Pointless rotation for random elements */
+.ai-rotate {
+  animation: pointless-rotate 20s linear infinite;
+}
+
+@keyframes pointless-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ai-wobble {
+  animation: wobble 3s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+/* Text regeneration hover effect */
+.ai-regenerate {
+  position: relative;
+  cursor: default;
+}
+
+.ai-regenerate::after {
+  content: "click to regenerate";
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 9px;
+  color: #a32c91;
+  font-family: 'Courier New', monospace;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.ai-regenerate:hover::after {
+  opacity: 0.6;
+}
+
+/* Glowing borders on feature boxes */
+.feature-box {
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  box-shadow: 0 0 20px rgba(238, 32, 120, 0.3), 0 0 40px rgba(163, 44, 145, 0.2) !important;
+}
+
+/* Plan boxes get extra glow */
+.plan-box:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3), 0 0 60px rgba(238, 32, 120, 0.2) !important;
+}
+
+/* Comic Sans on specific elements for maximum pain */
+.ai-comic-sans {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive !important;
+}
+
+/* Extra bottom padding to account for marquee */
+body {
+  padding-bottom: 35px;
+}
+
+/* Lens flare effect on the cover icon */
+.cover-icon {
+  filter: drop-shadow(0 0 30px rgba(238, 32, 120, 0.5)) drop-shadow(0 0 60px rgba(163, 44, 145, 0.3));
+}
+
+/* Notification counter on chat toggle */
+#ai-chat-toggle .notif-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff0000;
+  color: white;
+  font-size: 11px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Scrollbar styling for chat */
+#ai-chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#ai-chat-messages::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+#ai-chat-messages::-webkit-scrollbar-thumb {
+  background: #a32c91;
+  border-radius: 3px;
+}
+
+/* Make the promo button extra obnoxious */
+.promo-button {
+  animation: button-glow 2s ease-in-out infinite !important;
+}
+
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(238, 32, 120, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(238, 32, 120, 0.8), 0 0 60px rgba(0, 255, 136, 0.4);
+  }
+}
+
+/* Storage plan featured badge gets AI treatment */
+.storage-plan.featured::before {
+  content: "AI RECOMMENDS" !important;
+  background: linear-gradient(135deg, #00ff88, #00bfff) !important;
+  color: #1a1a2e !important;
+}
